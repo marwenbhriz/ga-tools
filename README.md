@@ -1,35 +1,86 @@
-sudo yum install google-cloud-sdk-gke-gcloud-auth-plugin
+# GA Tools: GA App setup in gcp 
+## Prerequisites
+> Note: Commands were performed in the OS X command line.
+> Commands in other unix inspired systems, like the Linux command line, should work equivalently.
+> Note. this commands should execute from jump server.
+> Note. we need to install helm 3 too
 
-gcloud container clusters get-credentials ga-gke --region asia-northeast1 --project grasys-study
-
-kubectl apply -f monitoring/namespace.yaml
-
-helm install sonarqube oci://registry-1.docker.io/bitnamicharts/sonarqube -n sonarqube
-
-helm search hub Prometheus
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-
-helm repo update
-
-helm install prometheus prometheus-community/prometheus -n monitoring
-
-
-kubectl expose service prometheus-server --type=LoadBalancer --target-port=9090 --name=prometheus-server-ext -n monitoring
++ [Prerequisites](#Prerequisites)
+    + [Shell Environment and Editor](#Shell)
+    + [Installing Homebrew](#Homebrew)
+    + [Installing Docker](#Docker)
+    + [Installing Kubernetes](#Kubernetes)
+    + [Installing Google CLI](#Google)
+    + [Installing HashiCorp Terraform](#Terraform)
+    + [create Alias](#Alias)
 
 
-curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+### #Shell
 
+You can check your shell by running the command echo $0.
+> Note: if you find the default shell its not bash 'zsh' you need to swith to bash by executing this command.
 
-helm repo add grafana https://grafana.github.io/helm-charts
-helm repo list
-helm repo update
-helm search repo grafana/grafana
-helm install grafana grafana/grafana --namespace monitoring
+```sh
+// switch to bash
+exec bash
 
-kubectl expose service grafana --type=LoadBalancer --target-port=3000 --name=grafana-ext -n monitoring
+// switch to zsh
+exec zsh
+```
 
+### #Homebrew
 
-user
+```sh
+// curl and install homebrew
 
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-sonar token: sqp_257682c295feb11b0dd0dd3be94e0d7957dac73a
+// add brew to path
+
+export HOMEBREW_PREFIX="/opt/homebrew";
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+export HOMEBREW_REPOSITORY="/opt/homebrew";
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
+export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
+
+// verify brew setup
+
+brew doctor
+```
+
+### #Docker
+
+you may also need to go with docker installation [Docker Desktop](https://www.docker.com/products/docker-desktop) which is available for Mac and Windows. Docker Desktop provides an option to start a fully functional Kubernetes environment.
+
+### #Kubernetes
+
+Kubectl client [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/). 
+
+### #Google
+
+We need to install the gcloud cli [gcloud-cli](https://cloud.google.com/sdk/docs/install)
+
+### #Terraform
+
+Terraform [terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli). 
+
+```sh
+// install terraform
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
+brew install tfenv
+brew install terracost
+// verify terraform
+terraform -help
+```
+
+## Databases & cluster-related services
+* [Mysql](./db/mysql/README.md)
+
+## Tools
+* [Prometheus](./prometheus/README.md)
+* [Grafana](./grafana/README.md)
+* [sonarqube](./sonarqube/README.md)
+* [Loki](./logging/README.md)
+* [Slack](./slack/README.md)

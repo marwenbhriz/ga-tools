@@ -1,0 +1,863 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 2,
+    "links": [],
+    "panels": [
+      {
+        "datasource": {
+          "uid": "$datasource"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 10,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "id": 1,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true,
+            "width": 220
+          },
+          "tooltip": {
+            "mode": "multi",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "7.4.0-pre",
+        "targets": [
+          {
+            "datasource": {
+              "uid": "$datasource"
+            },
+            "metricQuery": {
+              "aliasBy": "",
+              "alignmentPeriod": "$alignmentPeriod",
+              "filters": [
+                "resource.type",
+                "=",
+                "cloudsql_database"
+              ],
+              "groupBys": [],
+              "metricKind": "DELTA",
+              "metricType": "cloudsql.googleapis.com/database/mysql/queries",
+              "perSeriesAligner": "ALIGN_RATE",
+              "projectName": "$project",
+              "unit": "1",
+              "valueType": "INT64"
+            },
+            "queryType": "metrics",
+            "refId": "A"
+          }
+        ],
+        "title": "Cloud SQL Database - Queries",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "uid": "$datasource"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 10,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        },
+        "id": 2,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true,
+            "width": 220
+          },
+          "tooltip": {
+            "mode": "multi",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "7.4.0-pre",
+        "targets": [
+          {
+            "datasource": {
+              "uid": "$datasource"
+            },
+            "metricQuery": {
+              "aliasBy": "",
+              "alignmentPeriod": "$alignmentPeriod",
+              "filters": [
+                "resource.type",
+                "=",
+                "cloudsql_database"
+              ],
+              "groupBys": [],
+              "metricKind": "GAUGE",
+              "metricType": "cloudsql.googleapis.com/database/network/connections",
+              "perSeriesAligner": "ALIGN_MEAN",
+              "projectName": "$project",
+              "unit": "1",
+              "valueType": "INT64"
+            },
+            "queryType": "metrics",
+            "refId": "A"
+          }
+        ],
+        "title": "MySQL Connections",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "uid": "$datasource"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 10,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 8
+        },
+        "id": 3,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true,
+            "width": 220
+          },
+          "tooltip": {
+            "mode": "multi",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "7.4.0-pre",
+        "targets": [
+          {
+            "datasource": {
+              "uid": "$datasource"
+            },
+            "metricQuery": {
+              "aliasBy": "",
+              "alignmentPeriod": "$alignmentPeriod",
+              "filters": [
+                "resource.type",
+                "=",
+                "cloudsql_database"
+              ],
+              "groupBys": [],
+              "metricKind": "DELTA",
+              "metricType": "cloudsql.googleapis.com/database/mysql/received_bytes_count",
+              "perSeriesAligner": "ALIGN_RATE",
+              "projectName": "$project",
+              "unit": "By",
+              "valueType": "INT64"
+            },
+            "queryType": "metrics",
+            "refId": "A"
+          }
+        ],
+        "title": "Network bytes received by MySQL",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "uid": "$datasource"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 10,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 8
+        },
+        "id": 4,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true,
+            "width": 220
+          },
+          "tooltip": {
+            "mode": "multi",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "7.4.0-pre",
+        "targets": [
+          {
+            "datasource": {
+              "uid": "$datasource"
+            },
+            "metricQuery": {
+              "aliasBy": "",
+              "alignmentPeriod": "$alignmentPeriod",
+              "filters": [
+                "resource.type",
+                "=",
+                "cloudsql_database"
+              ],
+              "groupBys": [],
+              "metricKind": "DELTA",
+              "metricType": "cloudsql.googleapis.com/database/mysql/sent_bytes_count",
+              "perSeriesAligner": "ALIGN_RATE",
+              "projectName": "$project",
+              "unit": "By",
+              "valueType": "INT64"
+            },
+            "queryType": "metrics",
+            "refId": "A"
+          }
+        ],
+        "title": "Network bytes sent by MySQL",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "uid": "$datasource"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 10,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 16
+        },
+        "id": 5,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true,
+            "width": 220
+          },
+          "tooltip": {
+            "mode": "multi",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "7.4.0-pre",
+        "targets": [
+          {
+            "datasource": {
+              "uid": "$datasource"
+            },
+            "metricQuery": {
+              "aliasBy": "",
+              "alignmentPeriod": "$alignmentPeriod",
+              "filters": [
+                "resource.type",
+                "=",
+                "cloudsql_database"
+              ],
+              "groupBys": [],
+              "metricKind": "GAUGE",
+              "metricType": "cloudsql.googleapis.com/database/mysql/innodb_buffer_pool_pages_dirty",
+              "perSeriesAligner": "ALIGN_MEAN",
+              "projectName": "$project",
+              "unit": "1",
+              "valueType": "INT64"
+            },
+            "queryType": "metrics",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "uid": "$datasource"
+            },
+            "metricQuery": {
+              "aliasBy": "",
+              "alignmentPeriod": "$alignmentPeriod",
+              "filters": [
+                "resource.type",
+                "=",
+                "cloudsql_database"
+              ],
+              "groupBys": [],
+              "metricKind": "GAUGE",
+              "metricType": "cloudsql.googleapis.com/database/mysql/innodb_buffer_pool_pages_free",
+              "perSeriesAligner": "ALIGN_MEAN",
+              "projectName": "$project",
+              "unit": "1",
+              "valueType": "INT64"
+            },
+            "queryType": "metrics",
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "uid": "$datasource"
+            },
+            "metricQuery": {
+              "aliasBy": "",
+              "alignmentPeriod": "$alignmentPeriod",
+              "filters": [
+                "resource.type",
+                "=",
+                "cloudsql_database"
+              ],
+              "groupBys": [],
+              "metricKind": "GAUGE",
+              "metricType": "cloudsql.googleapis.com/database/mysql/innodb_buffer_pool_pages_total",
+              "perSeriesAligner": "ALIGN_MEAN",
+              "projectName": "$project",
+              "unit": "1",
+              "valueType": "INT64"
+            },
+            "queryType": "metrics",
+            "refId": "C"
+          }
+        ],
+        "title": "InnoDB dirty pages, InnoDB free pages, InnoDB total pages",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "uid": "$datasource"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 10,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 16
+        },
+        "id": 6,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true,
+            "width": 220
+          },
+          "tooltip": {
+            "mode": "multi",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "7.4.0-pre",
+        "targets": [
+          {
+            "datasource": {
+              "uid": "$datasource"
+            },
+            "metricQuery": {
+              "aliasBy": "",
+              "alignmentPeriod": "$alignmentPeriod",
+              "filters": [
+                "resource.type",
+                "=",
+                "cloudsql_database"
+              ],
+              "groupBys": [],
+              "metricKind": "DELTA",
+              "metricType": "cloudsql.googleapis.com/database/mysql/innodb_pages_read",
+              "perSeriesAligner": "ALIGN_RATE",
+              "projectName": "$project",
+              "unit": "1",
+              "valueType": "INT64"
+            },
+            "queryType": "metrics",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "uid": "$datasource"
+            },
+            "metricQuery": {
+              "aliasBy": "",
+              "alignmentPeriod": "$alignmentPeriod",
+              "filters": [
+                "resource.type",
+                "=",
+                "cloudsql_database"
+              ],
+              "groupBys": [],
+              "metricKind": "DELTA",
+              "metricType": "cloudsql.googleapis.com/database/mysql/innodb_pages_written",
+              "perSeriesAligner": "ALIGN_RATE",
+              "projectName": "$project",
+              "unit": "1",
+              "valueType": "INT64"
+            },
+            "queryType": "metrics",
+            "refId": "B"
+          }
+        ],
+        "title": "InnoDB pages read, InnoDB pages written",
+        "type": "timeseries"
+      }
+    ],
+    "schemaVersion": 39,
+    "tags": [
+      "Storage",
+      "Cloud Monitoring",
+      "GCP"
+    ],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": false,
+            "text": "GCP Stackdriver [Prod Project]",
+            "value": "fdrymzmez6vi8e"
+          },
+          "hide": 0,
+          "includeAll": false,
+          "label": "Datasource",
+          "multi": false,
+          "name": "datasource",
+          "options": [],
+          "query": "stackdriver",
+          "queryValue": "",
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "type": "datasource"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "grasys-study",
+            "value": "grasys-study"
+          },
+          "datasource": {
+            "uid": "$datasource"
+          },
+          "definition": "Google Cloud Monitoring - Projects",
+          "hide": 0,
+          "includeAll": false,
+          "label": "Project",
+          "multi": false,
+          "name": "project",
+          "options": [],
+          "query": {
+            "labelKey": "",
+            "loading": false,
+            "projectName": "$project",
+            "projects": [],
+            "selectedMetricType": "actions.googleapis.com/smarthome_action/num_active_users",
+            "selectedQueryType": "projects",
+            "selectedSLOService": "",
+            "selectedService": "actions.googleapis.com",
+            "sloServices": []
+          },
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "tagValuesQuery": "",
+          "tagsQuery": "",
+          "type": "query",
+          "useTags": false
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "grafana auto",
+            "value": "grafana-auto"
+          },
+          "datasource": {
+            "uid": "${datasource}"
+          },
+          "definition": "",
+          "hide": 0,
+          "includeAll": false,
+          "label": "Alignment Period",
+          "multi": false,
+          "name": "alignmentPeriod",
+          "options": [],
+          "query": {
+            "labelKey": "",
+            "loading": false,
+            "projectName": "$project",
+            "projects": [
+              {
+                "name": "project-1",
+                "value": "project-1"
+              },
+              {
+                "name": "project-2",
+                "value": "project-2"
+              }
+            ],
+            "refId": "CloudMonitoringVariableQueryEditor-VariableQuery",
+            "selectedMetricType": "actions.googleapis.com/smarthome_action/num_active_users",
+            "selectedQueryType": "alignmentPeriods",
+            "selectedSLOService": "",
+            "selectedService": "actions.googleapis.com",
+            "sloServices": []
+          },
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "tagValuesQuery": "",
+          "tagsQuery": "",
+          "type": "query",
+          "useTags": false
+        }
+      ]
+    },
+    "time": {
+      "from": "now-24h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Cloud SQL(MySQL) Monitoring",
+    "uid": "fdryn2hp51slcf",
+    "version": 1,
+    "weekStart": ""
+  }
