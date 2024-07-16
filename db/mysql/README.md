@@ -27,3 +27,9 @@ kubectl apply -f cm-mysql.yaml,mysql.yaml,svc-mysql.yaml
 For best practice we need to access to db in two way: 
 1. GKE: access to database with svc url. we cannot make our database as public.
 2. Cloud sql: create the sql db with private access in the same vpc and access to db with private ip.
+
+### Monitoring
+1. GKE: setup exporter and add to prometheus and create dashboard to monitor the status of db.
+2. Cloud sql: 
+![plot](../../img/img1.png)
+![plot](../../img/img2.png)
