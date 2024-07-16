@@ -84,3 +84,6 @@ terraform -help
 * [sonarqube](./sonarqube/README.md)
 * [Loki](./logging/README.md)
 * [Slack](./slack/README.md)
+
+
+> Note. There a lot of improvement of the system, in terme of monitoring and security and realibilty of system.
